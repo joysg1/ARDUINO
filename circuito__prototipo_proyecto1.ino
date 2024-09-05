@@ -1,5 +1,5 @@
 #define PIN_SENSOR A0
-#define PIN_SWITCH 9
+#define PIN_SWITCH 10
 
 float targetC = 24.0; // Temperatura en Celsius para activar el parpadeo del LED
 
@@ -21,6 +21,7 @@ float getTemperature() {
   float voltage = data * (5.0 / 1024.0);
   // Conversión a grados Celsius (TMP36: 500 mV = 0°C, 10 mV/°C)
   float temperatureC = (voltage - 0.5) * 100.0;
+  Serial.print(temperatureC);
   return temperatureC;
 }
 
@@ -39,7 +40,7 @@ void loop()
     Serial.println("Temperatura fuera de rango");
     Serial.println("--- LED OFF ---");
   } 
-  else if (temperatureC <= targetC)
+   else if (temperatureC <= targetC)
   {
     // Parpadeo rápido del LED si la temperatura <= 24°C
     for (int i = 0; i < 10; i++) // Número de parpadeos por ciclo
