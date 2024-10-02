@@ -1,34 +1,13 @@
-
-byte ledP = 13;
-byte button = 2;
-
-int buttonState = 0;
-
-
-void setup()
-{
-  pinMode(ledP, OUTPUT);
-  pinMode(button, INPUT);
+const int pinPlantilla = 9; // Pin donde está conectado el cable rojo de la plantilla
+int a = 1;
+void setup() {
+  Serial.begin(9600);
+  pinMode(pinPlantilla, OUTPUT); // Configura el pin como salida
+  digitalWrite(pinPlantilla, HIGH); // Enciende la plantilla
 }
 
-void loop()
-{
-  
-  buttonState = digitalRead(button);
-  
-  if(buttonState == HIGH){
-    digitalWrite(ledP, HIGH);
-  
-  
-  
-  }
-  
-  else {
-    digitalWrite(ledP,LOW);
-  
-  
-  
-  }
-  
-   delay(15);
+void loop() {
+  a = a + 1;
+  Serial.println(a);
+  delay(1000);
 }
