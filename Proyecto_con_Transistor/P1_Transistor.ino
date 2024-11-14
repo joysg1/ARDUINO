@@ -8,3 +8,9 @@ void setup() {
 void loop() {
   
 }
+
+
+
+// Emisor (izquierda) ----> ground
+// Base (central) ----> pin D3
+/// Colector (derecha) ----> plantilla termica
