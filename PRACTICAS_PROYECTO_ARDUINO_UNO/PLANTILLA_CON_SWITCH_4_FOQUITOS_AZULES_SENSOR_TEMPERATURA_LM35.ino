@@ -161,9 +161,7 @@ void medirTemperatura(){
 
   int temp_adc_val;
   float temp_val;
-  temp_adc_val = analogRead(LM35);	/* Read Temperature */
-  //temp_val = (temp_adc_val * 4.88);	/* Convert adc value to equivalent voltage */
-  // temp_val = (temp_val/10);	/* LM35 gives output of 10mv/°C */
+  temp_adc_val = analogRead(LM35);	
   temp_val = ((5*temp_adc_val * 100)/1024);
 
   Serial.print("Temperature = ");
